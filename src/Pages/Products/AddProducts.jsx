@@ -62,7 +62,7 @@ try {
   return (
      <div>
 
-      <div className="flex justify-center items-center min-h-screen  ">
+      <div className="flex justify-center items-center min-h-screen my-10 ">
         <div className="card bg-base-100 w-[94%]  md:w-100 shrink-0 shadow-2xl   ">
           <h1 className="text-3xl pt-5 font-bold text-secondary text-center">
            Add Product

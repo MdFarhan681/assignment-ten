@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import ratings from "../../src/assets/ratings.png";
 import { Link, NavLink, useNavigate } from "react-router";
 import Loader from "./Loader";
+import Swal from "sweetalert2";
+import axios from "axios";
 
-const MyCard = ({ singlecard, setloading }) => {
+const MyCard = ({ singlecard }) => {
   const {
     productName,
     coverImage,
@@ -13,6 +15,52 @@ const MyCard = ({ singlecard, setloading }) => {
     availability,
   } = singlecard;
 
+    const [loading, setloading] = useState(false);
+
+
+const handleDelete=()=>{
+  
+    Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+  if (result.isConfirmed) {
+     
+         axios
+      .delete(`http://localhost:3000/products/${_id}`,)
+      .then((res) => {
+      if(res.data.success){
+       
+         Swal.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
+   
+
+    });
+
+     
+      }
+     
+    })
+
+ window.location.reload();
+
+
+   
+  }
+});
+}
+
+
+if(loading){
+    return <Loader></Loader>
+}
   return (
     <>
       <div>
@@ -67,15 +115,16 @@ const MyCard = ({ singlecard, setloading }) => {
                 Update
               </NavLink>
 
-               <NavLink
+               <button 
                 onClick={() =>
-                  handleNav(navigate, `/ProductDetails/${_id}`, setloading)
+                 handleDelete()
+                  
                 }
-                to={`/ProductDetails/${_id}`}
+               
                 className="btn bg-[#2bb958] rounded-sm "
               >
                 Delete
-              </NavLink>
+              </button>
             </div>
           </div>
         </div>

@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLoaderData, useNavigate } from 'react-router';
 import ProductCard from '../../Components/ProductCard';
 import Loader from '../../Components/Loader';
 
 const AllProducts = () => {
    const rawdata = useLoaderData();
-    const [loading, setloading] = useState(false);
-      const navigate = useNavigate();
+    
+
   return (
    <>
-   {loading && <Loader></Loader>}
+  
 
     <div>
 
@@ -22,9 +22,11 @@ const AllProducts = () => {
             
         rawdata.map((singlecard)=>(
 
-      <ProductCard key={singlecard._id} singlecard={singlecard} loading={loading}
-        setloading={setloading}></ProductCard>
+      <ProductCard key={singlecard._id} singlecard={singlecard} 
+        ></ProductCard>
         ))
+
+       
         
         }
 

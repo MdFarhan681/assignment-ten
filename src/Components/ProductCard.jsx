@@ -3,7 +3,7 @@ import ratings from "../../src/assets/ratings.png"
 import { Link, NavLink, useNavigate } from "react-router";
 import Loader from "./Loader";
 
-const ProductCard = ({ singlecard,setloading  }) => {
+const ProductCard = ({ singlecard }) => {
   const { productName, coverImage, pricePerKg,_id,description,availability } = singlecard;
 
    
@@ -43,7 +43,7 @@ const ProductCard = ({ singlecard,setloading  }) => {
 
 
            <div className="navbar-end w-full py-2">
-    <NavLink onClick={() => handleNav(navigate, `/ProductDetails/${_id}`, setloading)} to={`/ProductDetails/${_id}`} className="btn bg-[#2bb958] rounded-sm w-full">View Details</NavLink>
+    <NavLink onClick={() => handleNav(navigate, `/ProductDetails/${_id}`)} to={`/ProductDetails/${_id}`} className="btn bg-[#2bb958] rounded-sm w-full">View Details</NavLink>
   </div>
         </div>
       </div>
