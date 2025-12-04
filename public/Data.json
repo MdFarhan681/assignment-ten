@@ -1,0 +1,179 @@
+[
+  {
+    "productName": "Organic Lentils",
+    "category": "Proteins",
+    "pricePerKg": 140,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "High-protein organic lentils, perfect for daily meals.",
+    "coverImage": "https://i.ibb.co/XZV946nY/protn2.jpg",
+    "userEmail": "farmer8@example.com",
+    "createdAt": "2025-01-10T10:25:00+00:00"
+  },
+  {
+    "productName": "Organic Tomatoes",
+    "category": "Vegetables",
+    "pricePerKg": 90,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Booked",
+    "description": "Juicy red tomatoes harvested fresh from organic farms.",
+    "coverImage": "https://i.ibb.co/PsmX94wx/vege1.jpg",
+    "userEmail": "farmer4@example.com",
+    "createdAt": "2025-01-10T09:45:00+00:00"
+  },
+  {
+    "productName": "Organic Almonds",
+    "category": "Healthy Fats",
+    "pricePerKg": 1200,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Premium raw almonds packed with healthy fats and protein.",
+    "coverImage": "https://i.ibb.co/vCTQV18K/fat1.jpg",
+    "userEmail": "farmer11@example.com",
+    "createdAt": "2025-01-10T10:45:00+00:00"
+  },
+  {
+    "productName": "Organic Chickpeas",
+    "category": "Proteins",
+    "pricePerKg": 120,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Protein-rich chickpeas ideal for salads and curries.",
+    "coverImage": "https://i.ibb.co/jvCygcS8/protn1.webp",
+    "userEmail": "farmer10@example.com",
+    "createdAt": "2025-01-10T10:40:00+00:00"
+  },
+  {
+    "productName": "Extra Virgin Olive Oil",
+    "category": "Healthy Fats",
+    "pricePerLiter": 1100,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Cold-pressed olive oil rich in antioxidants and healthy fats.",
+    "coverImage": "https://i.ibb.co/gZknVySq/fat2.jpg",
+    "userEmail": "farmer14@example.com",
+    "createdAt": "2025-01-10T11:05:00+00:00"
+  },
+  {
+    "productName": "Green Beans",
+    "category": "Vegetables",
+    "pricePerKg": 110,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Crunchy, farm-fresh green beans rich in vitamins.",
+    "coverImage": "https://i.ibb.co/0xGzQDj/vegi2.webp",
+    "userEmail": "farmer5@example.com",
+    "createdAt": "2025-01-10T10:00:00+00:00"
+  },
+  {
+    "productName": "Organic Peanut Butter",
+    "category": "Healthy Fats",
+    "pricePerJar": 350,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "100% natural peanut butter with no added sugar.",
+    "coverImage": "https://i.ibb.co/DHM5MVhb/fat3.webp",
+    "userEmail": "farmer13@example.com",
+    "createdAt": "2025-01-10T11:00:00+00:00"
+  },
+  {
+    "productName": "Fresh Carrots",
+    "category": "Vegetables",
+    "pricePerKg": 80,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Crisp, sweet organic carrots perfect for salads and cooking.",
+    "coverImage": "https://i.ibb.co/whgg7GW9/veg3.jpg",
+    "userEmail": "farmer2@example.com",
+    "createdAt": "2025-01-10T09:25:00+00:00"
+  },
+  {
+    "productName": "Mixed Nuts Pack",
+    "category": "Healthy Fats",
+    "pricePerPack": 750,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Booked",
+    "description": "A healthy mix of almonds, cashews, walnuts, and pistachios.",
+    "coverImage": "https://i.ibb.co/vCTQV18K/fat1.jpg",
+    "userEmail": "farmer16@example.com",
+    "createdAt": "2025-01-10T11:20:00+00:00"
+  },
+  {
+    "productName": "Organic Spinach",
+    "category": "Vegetables",
+    "pricePerKg": 120,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Fresh organic spinach rich in iron and vitamins.",
+    "coverImage": "https://i.ibb.co/PsmX94wx/vege1.jpg",
+    "userEmail": "farmer1@example.com",
+    "createdAt": "2025-01-10T09:20:00+00:00"
+  },
+  {
+    "productName": "Organic Walnuts",
+    "category": "Healthy Fats",
+    "pricePerKg": 1500,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Premium walnuts high in omega-3 fatty acids.",
+    "coverImage": "https://i.ibb.co/gZknVySq/fat2.jpg",
+    "userEmail": "farmer15@example.com",
+    "createdAt": "2025-01-10T11:10:00+00:00"
+  },
+  {
+    "productName": "Free-Range Eggs",
+    "category": "Proteins",
+    "pricePerPack": 150,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Organic eggs from free-range chickens, protein-rich and healthy.",
+    "coverImage": "https://i.ibb.co/BVbV12Jj/prot3.webp",
+    "userEmail": "farmer6@example.com",
+    "createdAt": "2025-01-10T10:15:00+00:00"
+  },
+  {
+    "productName": "Organic Broccoli",
+    "category": "Vegetables",
+    "pricePerKg": 160,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Nutrient-packed broccoli grown without chemicals.",
+    "coverImage": "https://i.ibb.co/0xGzQDj/vegi2.webp",
+    "userEmail": "farmer3@example.com",
+    "createdAt": "2025-01-10T09:30:00+00:00"
+  },
+  {
+    "productName": "Organic Chicken Breast",
+    "category": "Proteins",
+    "pricePerKg": 550,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Available",
+    "description": "Chemical-free chicken breast, high in lean protein.",
+    "coverImage": "https://i.ibb.co/XZV946nY/protn2.jpg",
+    "userEmail": "farmer7@example.com",
+    "createdAt": "2025-01-10T10:20:00+00:00"
+  },
+  {
+    "productName": "Grass-Fed Beef",
+    "category": "Proteins",
+    "pricePerKg": 950,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Booked",
+    "description": "Premium organic beef sourced from grass-fed cattle.",
+    "coverImage": "https://i.ibb.co/jvCygcS8/protn1.webp",
+    "userEmail": "farmer9@example.com",
+    "createdAt": "2025-01-10T10:35:00+00:00"
+  },
+  {
+    "productName": "Raw Cashew Nuts",
+    "category": "Healthy Fats",
+    "pricePerKg": 900,
+    "location": "Dhaka, Bangladesh",
+    "availability": "Booked",
+    "description": "Soft, buttery cashew nuts full of natural nutrients.",
+    "coverImage": "https://i.ibb.co/DHM5MVhb/fat3.webp",
+    "userEmail": "farmer12@example.com",
+    "createdAt": "2025-01-10T10:55:00+00:00"
+  }
+]
+
