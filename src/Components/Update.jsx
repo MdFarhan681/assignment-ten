@@ -1,19 +1,49 @@
-import React, { useContext } from 'react'
-import { Navigate, useLoaderData, useNavigate } from 'react-router';
+import React, { useContext, useEffect, useState } from 'react'
+import { Navigate, useLoaderData, useNavigate, useParams } from 'react-router';
 import { AuthContext } from '../Pages/Provider/AuthProvider';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const Update = () => {
-  const {user}=useContext(AuthContext)
-  const data = useLoaderData();
-  const model = data.result;
-  const navigate=useNavigate()
+   const { user } = useContext(AuthContext);
+  const [products, setproducts] = useState([]);
+   const {id}=useParams()
+   const navigate = useNavigate();
+   
+
+  const [loading, setloading] = useState(true);
+
+ 
+ 
+     useEffect(()=>{
+         fetch(`http://localhost:3000/update/${id}`,{
+ 
+             headers:{
+                 authorization:`Bearer ${user.accessToken}`
+             }
+ 
+         })
+         .then(res=>res.json())
+         .then(data=>{
+           
+            setproducts(data.result)
+             setloading(false)
+         })
+ 
+            
+     },[])
+ console.log(user.accessToken)
+
+
+
+
+
+
+
+
 
     const handleUp = async (e) => {
   e.preventDefault();
-
-  
 
   const form = e.target;
 
@@ -33,8 +63,15 @@ const Update = () => {
 
 
  try {
-  const response = await axios.put(`http://localhost:3000/update/${model._id}`, formData);
- console.log(response )
+  const response = await axios.put(`http://localhost:3000/update/${id}`, formData,
+  {
+     headers:{
+                 authorization:`Bearer ${user.accessToken}`
+             }
+  }
+
+  );
+
   if (response.data.success) {
     toast.success("Successfully Updated!");
    navigate('/myProduct')
@@ -46,7 +83,7 @@ const Update = () => {
   toast.error("Something went wrong!");
 }
 
-  
+  console.log(formData)
 };
 
 
@@ -61,7 +98,7 @@ const Update = () => {
     userEmail,
     createdAt,
     ownerName
-  } = model;
+  } = products;
   return (
  
 

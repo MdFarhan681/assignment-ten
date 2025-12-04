@@ -127,8 +127,8 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <Link
-                to="/Profile"
+              <button
+    
                 className="tooltip tooltip-bottom tooltip-primary"
                 data-tip={user.displayName}
               >
@@ -143,7 +143,7 @@ const Navbar = () => {
      p-1 hover:"
                   alt=""
                 />
-              </Link>
+              </button>
 
               <button
                 onClick={handleLogOut}

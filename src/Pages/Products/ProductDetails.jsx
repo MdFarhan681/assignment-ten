@@ -35,10 +35,7 @@ const ProductDetails = () => {
 
  
   const handleBook = async () => {
-    const bookingData = {
-      customerEmail: user.email,
-      productId: model._id,
-    };
+   
 
    fetch("http://localhost:3000/booked", {
 
@@ -46,7 +43,7 @@ const ProductDetails = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(bookingData),
+      body: JSON.stringify({...model,customerEmail: user.email}),
     })
       .then((res) => res.json())
       .then((data) => {

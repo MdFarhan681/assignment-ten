@@ -107,7 +107,7 @@ if(loading){
 
                <NavLink
                 onClick={() =>
-                  handleNav(navigate, `/ProductDetails/${_id}`, setloading)
+                  handleNav(navigate, `/update/${_id}`, setloading)
                 }
                 to={`/update/${_id}`}
                 className="btn bg-[#2bb958] rounded-sm "
