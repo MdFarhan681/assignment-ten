@@ -7,13 +7,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCpFJsGqHSI846GGPrwHn3R08Ou5TlyPg4",
-  authDomain: "organic-foods-56053.firebaseapp.com",
-  projectId: "organic-foods-56053",
-  storageBucket: "organic-foods-56053.firebasestorage.app",
-  messagingSenderId: "1041784141958",
-  appId: "1:1041784141958:web:a7f1b09a5dc8a68f1b7907",
-  measurementId: "G-91KM097LEB"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
+  measurementId: import.meta.env.VITE_MEASUREMENTID,
 };
 
 // Initialize Firebase
