@@ -16,8 +16,15 @@ const Navbar = () => {
   const { user, logOut } = use(AuthContext);
   const defaultPhoto = "https://i.ibb.co/7dLrnrMw/mann.jpg";
 
+  
+//handle theme
   const handleTheme = (checked) => {
-    console.log(checked)
+ const html= document.querySelector('html')
+ if(checked){
+    html.setAttribute("data-theme","dark")
+ }else{
+      html.setAttribute("data-theme","light")
+ }
   };
 
   const handleLogOut = () => {
