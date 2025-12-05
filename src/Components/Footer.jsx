@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <div className=''>
-    <footer className="footer sm:footer-horizontal bg-[#f1f3f4]   text-base-content p-10 w-full px-[8%] mx-auto">
+    <footer className="footer sm:footer-horizontal bg-black   text-gray-700 p-10 w-full px-[8%] mx-auto">
   <nav>
     <h6 className="footer-title">Services</h6>
 
