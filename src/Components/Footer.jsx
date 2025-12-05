@@ -5,7 +5,9 @@ const Footer = () => {
 
   return (
     <div className=''>
-    <footer className="footer sm:footer-horizontal bg-black   text-gray-700 p-10 w-full px-[8%] mx-auto">
+      <hr className='border border-base-200 ' />
+
+    <footer className="footer  sm:footer-horizontal bg-base-100 shadow-sm  text-base-600 p-10 w-full px-[8%] mx-auto ">
   <nav>
     <h6 className="footer-title">Services</h6>
 
@@ -63,7 +65,7 @@ const Footer = () => {
   
 </footer>
  
-<div className="bootm flex justify-center items-center py-5 px-[7%] text-center">
+<div className="bootm flex justify-center items-center py-3 px-[7%] text-center">
   
        <p className='py-1' >Copyright © {new Date().getFullYear()} - All right reserved by Organic Foods</p>
 
