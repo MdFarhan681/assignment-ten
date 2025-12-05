@@ -1,98 +1,119 @@
-import React, { useEffect, useState } from 'react'
-import { useLoaderData, useNavigate } from 'react-router';
+import React, { useEffect, useState } from 'react';
 import ProductCard from '../../Components/ProductCard';
 import Loader from '../../Components/Loader';
+import axios from 'axios';
 
 const AllProducts = () => {
-   const rawdata = useLoaderData();
-const [category, setCategory] = useState("");
-const [location, setLocation] = useState("");
-const [sort, setSort] = useState("");
+  const [allProducts, setAllProducts] = useState([]);        // Raw data from server
+  const [displayProducts, setDisplayProducts] = useState([]); // Filtered + sorted
+  const [category, setCategory] = useState("");
+  const [sort, setSort] = useState("");
+  const [loading, setLoading] = useState(true);
 
-   const fetchProduct = async () => {
-  const params = {};
+  // Fetch ALL products once when page loads
+  useEffect(() => {
+    const fetchAllProducts = async () => {
+      setLoading(true);
+      try {
+        const { data } = await axios.get("https://assignmenttenserver-pi.vercel.app/products");
+        setAllProducts(data);
+        setDisplayProducts(data); // Show all initially
+      } catch (err) {
+        console.error("Failed to load products:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  if (category) params.category = category;
-  if (location) params.location = location;
-  if (sort) params.sort = sort;
+    fetchAllProducts();
+  }, []);
 
-  const { data } = await axios.get("http://localhost:5000/vehicles", {
-    params,
-  });
+  // Apply button handler
+  const handleApplyFilters = () => {
+    let filtered = [...allProducts]; // Start with full list
 
-  setVehicles(data);
-};
+    // 1. Filter by category
+    if (category && category !== "") {
+      filtered = filtered.filter(product => product.category === category);
+    }
 
-    
+    // 2. Sort by price
+    if (sort === "price_asc") {
+      filtered.sort((a, b) => a.pricePerKg - b.pricePerKg); // Low → High
+    } else if (sort === "price_desc") {
+      filtered.sort((a, b) => b.pricePerKg - a.pricePerKg); // High → Low
+    }
+
+    setDisplayProducts(filtered);
+  };
+
+  // Optional: Reset button
+  const handleReset = () => {
+    setCategory("");
+    setSort("");
+    setDisplayProducts(allProducts);
+  };
 
   return (
-   <>
-  
-
-    <div>
-
-       <main className="care py-15 flex flex-col w-fit mx-auto ">
-        <h2 className="text-secondary text-xl md:text-3xl font-bold text-center pb-5">Our All Products
+    <div className="min-h-screen bg-base-100">
+      <main className="py-10 max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-secondary">
+          Our All Products
         </h2>
 
-<div className="filter my-4 w-fit mx-auto shadow-lg flex  ">
+        {/* FILTERS + APPLY BUTTON */}
+        <div className="flex flex-wrap  justify-center mb-12 p-8  rounded-2xl  w-fit mx-auto">
+          {/* Category Filter */}
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="select select-bordered w-fit max-w-xs join-item"
+          >
+            <option value="">All Categories</option>
+            <option value="Proteins">Protein</option>
+            <option value="Vegetables">Vegetable</option>
+            <option value="Healthy Fats">Healthy Fat</option>
+          </select>
 
+          {/* Sort Filter */}
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
+            className="select select-bordered w-fit max-w-xs join-item"
+          >
+            <option value="">Price</option>
+            <option value="price_asc"> Low to High</option>
+            <option value="price_desc">High to Low</option>
+          </select>
 
+          {/* Apply Button */}
+          <button
+            onClick={handleApplyFilters}
+            className="btn px-8 join-item"
+          >
+            Apply Filters
+          </button>
+        </div>
 
-  
-<div className=""><select className="select  w-fit rounded " onChange={(e) => setSort(e.target.value)}>
-<option value="">Price</option>
-<option value="price_asc">Low to High</option>
-<option value="price_desc">High to Low</option>
-</select></div>
-
-<div className="">
-  <select className="select  w-fit join-item border rounded" defaultValue="All Category" onChange={(e) => setCategory(e.target.value)}>
-    <option disabled={true}>Category</option>
-<option value="">All Category</option>
-<option value="SUV">Protein</option>
-<option value="Sedan">Vegitable</option>
-<option value="Sedan">Healthy Fat</option>
-</select></div>
-
-  <div className="rounded join-item w-fit ">
-   <button onClick={fetchProduct} className="btn" >Apply</button>
-  </div>
-
-
-</div>
-        
-
-
-
-
-       
-      
-      <div className="w-full mycard px-0 grid grid-cols-1 md:grid-cols-4 gap-5  mx-auto place-items-center">
-        {
-            
-        rawdata.map((singlecard)=>(
-
-      <ProductCard key={singlecard._id} singlecard={singlecard} 
-        ></ProductCard>
-        ))
-
-       
-        
-        }
-
-           
-          
-      </div>
-
-     </main>
-
-      
+        {/* LOADING & PRODUCTS */}
+        {loading ? (
+          <div className="flex justify-center py-32">
+            <Loader />
+          </div>
+        ) : displayProducts.length === 0 ? (
+          <div className="text-center py-20">
+            <p className="text-2xl text-gray-500">No products found matching your filters.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {displayProducts.map((product) => (
+              <ProductCard key={product._id} singlecard={product} />
+            ))}
+          </div>
+        )}
+      </main>
     </div>
-   
-   
-   </>
-  )
-}
+  );
+};
 
-export default AllProducts
+export default AllProducts;

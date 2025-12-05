@@ -15,6 +15,7 @@ const Home = () => {
 
       <main className="care py-15 flex flex-col ">
         <div className="latest">
+          
             <h2 className="text-secondary text-xl md:text-3xl font-bold text-center pb-5">Our Latest Products
         </h2>
 
