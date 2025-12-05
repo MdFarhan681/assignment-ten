@@ -16,13 +16,9 @@ const Navbar = () => {
   const { user, logOut } = use(AuthContext);
   const defaultPhoto = "https://i.ibb.co/7dLrnrMw/mann.jpg";
 
-//   const handleNav = () => {
-//     setloading(true);
-//     setTimeout(() => {
-//       setloading(false);
-//       navigate(path);
-//     }, 300);
-//   };
+  const handleTheme = (checked) => {
+    console.log(checked)
+  };
 
   const handleLogOut = () => {
    
