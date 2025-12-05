@@ -125,7 +125,29 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
-          {user ? (
+            <input
+           onChange={(e) => handleTheme(e.target.checked)}
+           type="checkbox"
+           defaultChecked={localStorage.getItem('theme') === "dark"}
+           className="toggle"/>
+
+
+
+
+
+
+          {
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          user ? (
             <>
               <button
     
