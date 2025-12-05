@@ -47,27 +47,7 @@ const Register = () => {
         setuser(user)
 
 
-  //          updateProfile(user, {
-  //     displayName: name,
-  //     photoURL: photo ||"https://i.ibb.co/7dLrnrMw/mann.jpg",
-  //   }
   
-  // )
-  //     .then(() => {
-        
-  //       setuser({ ...user, displayName: name, photoURL: photo ||"https://i.ibb.co/7dLrnrMw/mann.jpg"}); 
-  //       toast.success("Signup Successfull");
-  //       navigate( "/");
-  //       form.reset();
-  //     })
-  //     .catch((err) => {
-  //       // console.log("Profile update error:", err);
-  //       toast.error("Signup success, but failed to update profile");
-         
-
-  //     }) .finally(() => setLoading(false)); 
-       
-       
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {
@@ -96,7 +76,7 @@ const Register = () => {
       navigate("/");
     })
     .catch(() => {
-      toast.error("Google Sign-In Failed. Try again");
+      toast.error("Google Sign-In Failed.Try again");
     });
   }
 
@@ -109,7 +89,7 @@ const Register = () => {
       <div className="flex justify-center items-center min-h-screen  ">
         <div className="card bg-base-100 w-[94%]  md:w-100 shrink-0 shadow-2xl   ">
           <h1 className="text-3xl pt-5 font-bold text-secondary text-center">
-            Signup Your Account
+            Register Your Account
           </h1>
           <div className="card-body w-full">
             <form onSubmit={handleSub} className="fieldset">
