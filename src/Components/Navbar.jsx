@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import logo from "../../src/assets/logo.png";
 import { handleNav } from "../NavigateLoader";
@@ -11,21 +11,33 @@ import Loader from "./Loader";
 
 const Navbar = () => {
   const [loading, setloading] = useState(false);
+  const [theme, settheme] = useState(localStorage.getItem('theme') || "light" );
   const navigate = useNavigate();
 
   const { user, logOut } = use(AuthContext);
   const defaultPhoto = "https://i.ibb.co/7dLrnrMw/mann.jpg";
 
-  
+  useEffect(()=>{
+const html= document.querySelector('html')
+ html.setAttribute("data-theme",theme)
+ localStorage.setItem("theme",theme)
+ 
+
+  },[theme]
+  )
+
+
 //handle theme
   const handleTheme = (checked) => {
- const html= document.querySelector('html')
- if(checked){
-    html.setAttribute("data-theme","dark")
- }else{
-      html.setAttribute("data-theme","light")
- }
+ 
+ settheme(checked ? "dark" : "light")
   };
+
+
+
+  //local storage 
+
+
 
   const handleLogOut = () => {
    
@@ -132,7 +144,7 @@ const Navbar = () => {
            onChange={(e) => handleTheme(e.target.checked)}
            type="checkbox"
            defaultChecked={localStorage.getItem('theme') === "dark"}
-           className="toggle"/>
+           className="toggle mx-4"/>
 
 
 
