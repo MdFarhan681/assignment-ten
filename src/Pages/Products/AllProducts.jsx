@@ -12,7 +12,13 @@ const [sort, setSort] = useState("");
    const fetchProduct = async () => {
   const params = {};
 
-  
+  if (category) params.category = category;
+  if (location) params.location = location;
+  if (sort) params.sort = sort;
+
+  const { data } = await axios.get("http://localhost:5000/vehicles", {
+    params,
+  });
 
   setVehicles(data);
 };
