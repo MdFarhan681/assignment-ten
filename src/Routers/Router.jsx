@@ -20,63 +20,87 @@ const router = createBrowserRouter([
     path: "/",
     Component: Root,
     children: [
-        { path: "/", Component: Home,
-             loader: () => fetch("http://localhost:3000/latestProducts"),
-
-         }, { path: "/allProducts", Component: AllProducts,
-            loader: () => fetch("http://localhost:3000/products"),
-            
-         }, { path: "/TradingProducts", Component: TradingProducts,
-            loader: () => fetch("http://localhost:3000/products"),
-            
-         }, { path: "/addProducts", element: <PrivateRouth>
-            <AddProducts></AddProducts>
-         </PrivateRouth>
-            
-         }, { path: "/myProduct", element: <PrivateRouth>
-            <MyProducts></MyProducts>
-         </PrivateRouth>,
-         
-            
-         }, { path: "/myBooking", element: <PrivateRouth>
-            <Booking></Booking>
-         </PrivateRouth>,
-          
-         
-            
-         }, {
-        path: "/ProductDetails/:id",
-        element:<PrivateRouth>
-   <ProductDetails></ProductDetails>
-        </PrivateRouth>
-       
-   
-      }, {
-        path: "/update/:id",
-        element:<PrivateRouth>
-   <Update></Update>
-        </PrivateRouth>
-       ,
-          loader:({params})=>fetch(`http://localhost:3000/products/${params.id}`)
-   
+      {
+        path: "/",
+        Component: Home,
+        loader: () =>
+          fetch("https://assignmenttenserver-pi.vercel.app/latestProducts"),
       },
-    
+      {
+        path: "/allProducts",
+        Component: AllProducts,
+        loader: () =>
+          fetch("https://assignmenttenserver-pi.vercel.app/products"),
+      },
+      {
+        path: "/TradingProducts",
+        Component: TradingProducts,
+        loader: () =>
+          fetch("https://assignmenttenserver-pi.vercel.app/products"),
+      },
+      {
+        path: "/addProducts",
+        element: (
+          <PrivateRouth>
+            <AddProducts></AddProducts>
+          </PrivateRouth>
+        ),
+      },
+      {
+        path: "/myProduct",
+        element: (
+          <PrivateRouth>
+            <MyProducts></MyProducts>
+          </PrivateRouth>
+        ),
+      },
+      {
+        path: "/myBooking",
+        element: (
+          <PrivateRouth>
+            <Booking></Booking>
+          </PrivateRouth>
+        ),
+      },
+      {
+        path: "/ProductDetails/:id",
+        element: (
+          <PrivateRouth>
+            <ProductDetails></ProductDetails>
+          </PrivateRouth>
+        ),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <PrivateRouth>
+            <Update></Update>
+          </PrivateRouth>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://assignmenttenserver-pi.vercel.app/products/${params.id}`
+          ),
+      },
     ],
-  },{
-    path:"/auth",
-   Component:Auth,
-    children:[
-    {
-        path:"/auth/login",
-        Component:Login,
-    },{
-        path:"/auth/register",
-        Component:Register,
-    },{
-        path:"/auth/forget",
-        Component:Forget,
-    }
-    ]
+  },
+  {
+    path: "/auth",
+    Component: Auth,
+    children: [
+      {
+        path: "/auth/login",
+        Component: Login,
+      },
+      {
+        path: "/auth/register",
+        Component: Register,
+      },
+      {
+        path: "/auth/forget",
+        Component: Forget,
+      },
+    ],
   },
 ]);
 

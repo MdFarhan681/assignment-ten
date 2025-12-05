@@ -6,52 +6,40 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Loader from "../../Components/Loader";
 
 const ProductDetails = () => {
- const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
-    const {id}=useParams()
-    const [model,setmodel]=useState({})
-    const [loading,setloading]=useState(true)
+  const { id } = useParams();
+  const [model, setmodel] = useState({});
+  const [loading, setloading] = useState(true);
 
-    useEffect(()=>{
-        fetch(`http://localhost:3000/products/${id}`,{
+  useEffect(() => {
+    fetch(`https://assignmenttenserver-pi.vercel.app/products/${id}`, {
+      headers: {
+        authorization: `Bearer ${user.accessToken}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setmodel(data.result);
+        setloading(false);
+      });
+  }, []);
 
-            headers:{
-                authorization:`Bearer ${user.accessToken}`
-            }
-
-        })
-        .then(res=>res.json())
-        .then(data=>{
-          
-            setmodel(data.result)
-            setloading(false)
-        })
-
-           
-    },[])
-
-    
- 
-
- 
   const handleBook = async () => {
-   
-
-   fetch("http://localhost:3000/booked", {
-
+    fetch("https://assignmenttenserver-pi.vercel.app/booked", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({...model,customerEmail: user.email}),
+      body: JSON.stringify({ ...model, customerEmail: user.email }),
     })
       .then((res) => res.json())
       .then((data) => {
-         if (data.success) {
-        toast.success("Successfully Booked!");
-      } else {
-        toast.error("Booking Failed!");
-      }
+        if (data.success) {
+          toast.success("Successfully Booked!");
+        } else {
+          toast.error("Booking Failed!");
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -70,9 +58,9 @@ const ProductDetails = () => {
     createdAt,
   } = model;
 
-if(loading){
-    return <Loader></Loader>
-}
+  if (loading) {
+    return <Loader></Loader>;
+  }
 
   return (
     <div className="details w-full py-10 md:px-15 px-[7%]">

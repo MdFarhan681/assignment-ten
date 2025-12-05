@@ -1,20 +1,12 @@
 @import "tailwindcss";
 
-
- @plugin "daisyui" {
-   themes: light --default;
- }
- @plugin "daisyui/theme" {
-  name: "light";
-  default: true
-  --color-primary: #2bb958;
-  /* btn */
-  --color-secondary: #0C051A;
-  /* text */
-  --color-base-100: #f7f7f7; 
-  /* bg */
-
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
 }
+
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 a.active{
   color:#20a34a ;

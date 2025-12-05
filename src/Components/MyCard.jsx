@@ -15,52 +15,39 @@ const MyCard = ({ singlecard }) => {
     availability,
   } = singlecard;
 
-    const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState(false);
 
-
-const handleDelete=()=>{
-  
+  const handleDelete = () => {
     Swal.fire({
-  title: "Are you sure?",
-  text: "You won't be able to revert this!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, delete it!"
-}).then((result) => {
-  if (result.isConfirmed) {
-     
-         axios
-      .delete(`http://localhost:3000/products/${_id}`,)
-      .then((res) => {
-      if(res.data.success){
-       
-         Swal.fire({
-      title: "Deleted!",
-      text: "Your file has been deleted.",
-      icon: "success"
-   
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`https://assignmenttenserver-pi.vercel.app/products/${_id}`)
+          .then((res) => {
+            if (res.data.success) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+            }
+          });
 
-    });
-
-     
+        window.location.reload();
       }
-     
-    })
+    });
+  };
 
- window.location.reload();
-
-
-   
+  if (loading) {
+    return <Loader></Loader>;
   }
-});
-}
-
-
-if(loading){
-    return <Loader></Loader>
-}
   return (
     <>
       <div>
@@ -105,7 +92,7 @@ if(loading){
                 View Details
               </NavLink>
 
-               <NavLink
+              <NavLink
                 onClick={() =>
                   handleNav(navigate, `/update/${_id}`, setloading)
                 }
@@ -115,12 +102,8 @@ if(loading){
                 Update
               </NavLink>
 
-               <button 
-                onClick={() =>
-                 handleDelete()
-                  
-                }
-               
+              <button
+                onClick={() => handleDelete()}
                 className="btn bg-[#2bb958] rounded-sm "
               >
                 Delete

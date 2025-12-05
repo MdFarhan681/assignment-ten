@@ -14,11 +14,14 @@ const Booking = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/myBooked?email=${user.email}`, {
-        headers: {
-          authorization: `Bearer ${user.accessToken}`,
-        },
-      })
+      .get(
+        `https://assignmenttenserver-pi.vercel.app/myBooked?email=${user.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${user.accessToken}`,
+          },
+        }
+      )
       .then((res) => {
         if (res.data.success) {
           setproducts(res.data.data);
