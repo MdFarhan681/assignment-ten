@@ -5,6 +5,18 @@ import Loader from '../../Components/Loader';
 
 const AllProducts = () => {
    const rawdata = useLoaderData();
+const [category, setCategory] = useState("");
+const [location, setLocation] = useState("");
+const [sort, setSort] = useState("");
+
+   const fetchProduct = async () => {
+  const params = {};
+
+  
+
+  setVehicles(data);
+};
+
     
 
   return (
@@ -22,14 +34,23 @@ const AllProducts = () => {
 
 
   
-<div className=""><select className="select select-primary w-fit rounded " onChange={(e) => setSort(e.target.value)}>
+<div className=""><select className="select  w-fit rounded " onChange={(e) => setSort(e.target.value)}>
 <option value="">Price</option>
 <option value="price_asc">Low to High</option>
 <option value="price_desc">High to Low</option>
 </select></div>
 
-  <div className="border border-primary rounded  join-item w-fit ">
-   <button className="btn" >Apply</button>
+<div className="">
+  <select className="select  w-fit join-item border rounded" defaultValue="All Category" onChange={(e) => setCategory(e.target.value)}>
+    <option disabled={true}>Category</option>
+<option value="">All Category</option>
+<option value="SUV">Protein</option>
+<option value="Sedan">Vegitable</option>
+<option value="Sedan">Healthy Fat</option>
+</select></div>
+
+  <div className="rounded join-item w-fit ">
+   <button onClick={fetchProduct} className="btn" >Apply</button>
   </div>
 
 
