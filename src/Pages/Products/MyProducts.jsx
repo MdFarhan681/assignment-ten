@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import Loader from "../../Components/Loader";
 import { Link, Navigate, NavLink } from "react-router";
-
+import { motion } from "framer-motion";
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
   const [products, setproducts] = useState([]);
@@ -60,12 +60,14 @@ const MyProducts = () => {
                   </h2>
 
                   <div className="justify-center card-actions mt-3">
-                    <NavLink
-                      to={"/addProducts"}
-                      className="btn px-4 shadow-xl shadow-green py-3 font-semibold rounded-md text-black bg-green-500  hover:text-white hover:border-white transition-all duration-300"
-                    >
-                      Add product
-                    </NavLink>
+                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+  <NavLink
+    to="/addProducts"
+    className="btn px-4 shadow-xl shadow-green py-3 font-semibold rounded-md text-black bg-green-500 hover:text-white hover:border-white transition-all duration-300"
+  >
+    Add product
+  </NavLink>
+</motion.div>
                   </div>
                 </div>
               </div>
