@@ -65,11 +65,11 @@ const ProductDetails = () => {
   return (
     <div className="details w-full py-10 md:px-15 px-[7%]">
       <div className="pb-3 flex flex-col md:flex-row ">
-        <img className="w-65" src={coverImage} alt="" />
+        <img className="w-65 rounded" src={coverImage} alt="" />
 
         <div className="topCont pl-3 w-full ">
           <div className="contHead  ">
-            <h2 className="font-bold text-3xl text-[#001931]">{productName}</h2>
+            <h2 className="font-bold text-3xl text-transparent font-semibold bg-gradient-to-r from-[#20a34a] to-[#69ed93] bg-clip-text ">{productName}</h2>
 
             <p className="text-secondary pt-1 ">
               Category:{" "}
@@ -97,20 +97,20 @@ const ProductDetails = () => {
           <div className="topicons flex justify-between w-full md:w-100 pt-3 ">
             <div className="download flex flex-col">
               <p className="text-gray-400 text-sm py-1">Price Per kg</p>
-              <p className="text-[#20a34a] text-xl font-semibold">
+              <p className="text-[#20a34a] text-[1.25 rem] md:text-xl font-semibold">
                 {pricePerKg}
               </p>
             </div>
             <div className="avgRating flex flex-col justify-center items-center ">
               <p className="text-gray-400 text-sm py-1">Availablity</p>
-              <p className="text-[#20a34a] text-xl font-semibold">
+              <p className="text-[#20a34a] text-[1.25 rem] md:text-xl font-semibold">
                 {availability}
               </p>
             </div>
 
             <div className="avgRating flex flex-col ">
               <p className="text-gray-400 text-sm py-1">Stock Date</p>
-              <p className="text-[#20a34a] text-xl font-semibold">
+              <p className="text-[#20a34a] text-[1.25 rem] md:text-xl font-semibold">
                 {formatDistanceToNow(new Date(createdAt), { addSuffix: true })}
               </p>
             </div>

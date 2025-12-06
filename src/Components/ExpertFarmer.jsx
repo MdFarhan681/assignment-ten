@@ -8,7 +8,7 @@ const ExpertFarmer = () => {
   return (
     <section className="w-full py-12 px-10">
       <div className="max-w-5xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-800">
+        <h2 className="text-2xl md:text-3xl font-bold mb-8  py-8">
           Meet Our Expert Farmers
         </h2>
 

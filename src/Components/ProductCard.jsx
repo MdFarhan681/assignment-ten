@@ -13,7 +13,7 @@ const ProductCard = ({ singlecard }) => {
     <>
      
     <div>
-      <div className="btn  w-75 h-95 p-3  card shadow-sm   ">
+      <div className="btn w-70 md:w-75 h-95 p-3  card shadow-sm   ">
         
         <figure>
           <img className="rounded-sm w-full h-50 " src={coverImage} alt="apps" />

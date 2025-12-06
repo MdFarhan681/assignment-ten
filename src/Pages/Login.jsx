@@ -76,7 +76,7 @@ toast.error("No user found with that email")
      
     <div className="card bg-base-100 w-[94%]  md:w-100 shrink-0 shadow-2xl   ">
 
-         <h1 className="text-3xl font-bold text-secondary pt-5 text-center">Login Your Account</h1>
+         <h1 className="text-xl md:text-3xl font-bold  pt-5 text-center">Login Your Account</h1>
       <div className="card-body w-full">
 
         <form onSubmit={handleLogin} className="fieldset">

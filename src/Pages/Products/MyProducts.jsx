@@ -36,7 +36,7 @@ const MyProducts = () => {
 
       <div>
         <main className="care py-15 flex flex-col w-fit mx-auto ">
-          <h2 className="text-secondary text-xl md:text-3xl font-bold text-center pb-5">
+          <h2 className=" text-2xl md:text-3xl font-bold text-center pb-5">
             My Products
           </h2>
 

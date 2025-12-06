@@ -15,8 +15,8 @@ const Home = () => {
 
       <main className="care py-15 flex flex-col ">
         <div className="latest">
-          
-            <h2 className="text-secondary text-xl md:text-3xl font-bold text-center pb-5">Our Latest Products
+
+            <h2 className="text-2xl md:text-3xl font-bold text-center pb-5">Our Latest Products
         </h2>
 
          <div className="w-fit mycard px-0 grid grid-cols-1 md:grid-cols-3 gap-5  mx-auto place-items-center">
@@ -34,7 +34,7 @@ const Home = () => {
 
 
 
-<h2 className="text-secondary text-xl md:text-3xl font-bold text-center pb-5 mt-15">Our Popular Products
+<h2 className=" text-2xl md:text-3xl font-bold text-center pb-5 mt-15">Our Popular Products
         </h2>
        <div className="expert">
         <TradingProducts trading={trading}></TradingProducts>

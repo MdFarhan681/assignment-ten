@@ -35,7 +35,7 @@ const html= document.querySelector('html')
 
 
 
-  //local storage 
+  
 
 
 
@@ -91,6 +91,16 @@ const html= document.querySelector('html')
       >
         My Bookings
       </NavLink>
+
+       <input
+           onChange={(e) => handleTheme(e.target.checked)}
+           type="checkbox"
+           defaultChecked={localStorage.getItem('theme') === "dark"}
+           className="toggle mx-4"/>
+
+
+
+
     </>
   );
 
@@ -98,7 +108,7 @@ const html= document.querySelector('html')
     <>
       {loading && <Loader></Loader>}
 
-      <div className="navbar bg-base-100 shadow-sm w-full px-[7%] relative z-50">
+      <div className="navbar bg-base-100 shadow-sm w-full px-[7%] relative z-50 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -128,7 +138,7 @@ const html= document.querySelector('html')
 
           <NavLink   onClick={() => handleNav(navigate,"/", setloading)}className="logo animate__animated animate__rubberBand flex btn btn-ghost p-1 h-fit"  to="/">
             <img className="w-12 h-10 rounded-xl " src={logo} alt="" />
-            <p className=" text-xl text-[#20a34a]">Organic Foods</p>
+            <p className="hidden sm:block text-xl text-balance text-[#20a34a]">Organic Foods</p>
           </NavLink>
 
 
@@ -140,11 +150,7 @@ const html= document.querySelector('html')
         </div>
 
         <div className="navbar-end">
-            <input
-           onChange={(e) => handleTheme(e.target.checked)}
-           type="checkbox"
-           defaultChecked={localStorage.getItem('theme') === "dark"}
-           className="toggle mx-4"/>
+           
 
 
 
@@ -184,7 +190,7 @@ const html= document.querySelector('html')
 
               <button
                 onClick={handleLogOut}
-                className="btn px-4 shadow-xl shadow-green border border-green-700 py-3 font-semibold rounded-md text-black bg-green-500  hover:text-white hover:border-white transition-all duration-300 "
+                className="btn px-2 shadow-xl shadow-green border border-green-700 py-2 font-semibold rounded-md text-black bg-green-500  mx-2 hover:text-white hover:border-white transition-all duration-300 "
               >
                 LogOut
               </button>

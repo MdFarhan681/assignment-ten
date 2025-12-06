@@ -37,11 +37,11 @@ const Booking = () => {
   return (
     <div>
       <main className="care py-15 flex flex-col w-fit mx-auto">
-        <h2 className="text-secondary text-xl md:text-3xl font-bold text-center pb-5">
+        <h2 className=" text-2xl md:text-3xl font-bold text-center pb-5">
           My Booking Products
         </h2>
 
-        <div className="w-full mycard px-0 grid grid-cols-1 md:grid-cols-4 gap-5  mx-auto place-items-center ">
+        <div className="w-full mycard px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5  mx-auto place-items-center ">
           {products && products.length > 0 ? (
             products.map((singlecard) => (
               <ProductCard
