@@ -41,7 +41,9 @@ const Booking = () => {
           My Booking Products
         </h2>
 
-        <div className="w-full mycard px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5  mx-auto place-items-center ">
+        <div  className={`w-full mycard px-0 grid gap-5 mx-auto place-items-center text-center 
+    ${products.length === 1 ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}
+  `}>
           {products && products.length > 0 ? (
             products.map((singlecard) => (
               <ProductCard

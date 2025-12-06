@@ -6,29 +6,34 @@ import "swiper/css/pagination";
 
 const ExpertFarmer = () => {
   return (
-    <section className="w-full py-12 px-10">
-      <div className="max-w-5xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8  py-8">
+    <section className="w-full py-12 px-4 sm:px-10">
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-2xl md:text-3xl font-bold mb-5 py-4">
           Meet Our Expert Farmers
         </h2>
 
         <Swiper
           modules={[Pagination, Autoplay]}
+          spaceBetween={20}
           slidesPerView={1}
-          spaceBetween={12}
-          pagination={{ clickable: true }}
+          centeredSlides={true}
+          loop={true}
           autoplay={{ delay: 4500, disableOnInteraction: false }}
-          breakpoints={{
-            
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+          pagination={{ 
+            clickable: true,
+            el: '.custom-pagination',
           }}
-          className="pb-40"
+          breakpoints={{
+            640: { slidesPerView: 1, centeredSlides: true },
+            768: { slidesPerView: 2, centeredSlides: false },
+            1024: { slidesPerView: 3, centeredSlides: false },
+          }}
+          className="pb-20"
         >
-          {/* Farmer 1 */}
+
+          {/* ALL CARDS NOW HAVE EXACT SAME DIMENSIONS */}
           <SwiperSlide>
-            <div className="card  w-[300px] h-[360px] flex flex-col shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+            <div className="card w-full max-w-[300px] mx-auto h-[340px] flex flex-col shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
               <figure className="h-48 w-full overflow-hidden">
                 <img
                   src="https://i.ibb.co/zHPWthbZ/farmer1.jpg"
@@ -36,17 +41,12 @@ const ExpertFarmer = () => {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </figure>
-              <div className="flex flex-col justify-between p-5 text-left">
+              <div className="flex flex-col justify-between p-5 text-left flex-1">
                 <div>
-                  <h3 className="font-semibold text-sm text-secondary mb-1">
-                    Abdul Rahman
-                  </h3>
-                  <p className="text-green-600 text-sm font-medium mb-2">
-                    Organic Vegetable Specialist
-                  </p>
-                  <p className="text-gray-400 text-[.8rem] leading-relaxed">
-                    Expert in growing pesticide-free leafy greens and winter
-                    vegetables using sustainable farming methods.
+                  <h3 className="font-semibold text-sm text-secondary mb-1">Abdul Rahman</h3>
+                  <p className="text-green-600 text-sm font-medium mb-2">Organic Vegetable Specialist</p>
+                  <p className="text-gray-400 text-[.8rem] leading-relaxed text-justify">
+                    Expert in growing pesticide-free leafy greens and winter vegetables using sustainable farming methods.
                   </p>
                 </div>
                 <div className="mt-4">
@@ -58,27 +58,21 @@ const ExpertFarmer = () => {
             </div>
           </SwiperSlide>
 
-          {/* Farmer 2 */}
           <SwiperSlide>
-            <div className="card w-[300px] h-[360px] flex flex-col shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+            <div className="card w-full max-w-[300px] mx-auto h-[340px] flex flex-col shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
               <figure className="h-48 w-full overflow-hidden">
                 <img
                   src="https://i.ibb.co/7NL23Qjm/farmer2.jpg"
-                  alt="Farmer Salma Akter"
+                  alt="Gias Uddin"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </figure>
-              <div className="flex flex-col justify-between p-5 text-left">
+              <div className="flex flex-col justify-between p-5 text-left flex-1">
                 <div>
-                  <h3 className="font-semibold text-sm text-secondary mb-1">
-                   Gias Uddin
-                  </h3>
-                  <p className="text-green-600 text-sm font-medium mb-2">
-                    Fruit Cultivation Expert
-                  </p>
+                  <h3 className="font-semibold text-sm text-secondary mb-1">Gias Uddin</h3>
+                  <p className="text-green-600 text-sm font-medium mb-2">Fruit Cultivation Expert</p>
                   <p className="text-gray-400 text-[.8rem] leading-relaxed">
-                    Specializes in mango, banana, and seasonal fruits with
-                    modern irrigation and natural growth techniques.
+                    Specializes in mango, banana, and seasonal fruits with modern irrigation and natural growth techniques.
                   </p>
                 </div>
                 <div className="mt-4">
@@ -90,27 +84,21 @@ const ExpertFarmer = () => {
             </div>
           </SwiperSlide>
 
-          {/* Farmer 3 */}
           <SwiperSlide>
-            <div className="card  w-[300px] h-[360px] flex flex-col shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-              <figure className="w-full h-45 bg-gray-50 rounded-sm overflow-hidden flex items-center justify-center">
+            <div className="card w-full max-w-[300px] mx-auto h-[340px] flex flex-col shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+              <figure className="h-48 w-full overflow-hidden">
                 <img
                   src="https://i.ibb.co/qM8B0QHY/farmer3.jpg"
-                  alt="Farmer Riaz Ahmed"
+                  alt="Riaz Ahmed"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </figure>
-              <div className="flex flex-col justify-between p-5 text-left">
+              <div className="flex flex-col justify-between p-5 text-left flex-1">
                 <div>
-                  <h3 className="font-semibold text-sm text-secondary mb-1">
-                    Riaz Ahmed
-                  </h3>
-                  <p className="text-green-600 text-sm font-medium mb-2">
-                    Soil & Crop Management Expert
-                  </p>
+                  <h3 className="font-semibold text-sm text-secondary mb-1">Riaz Ahmed</h3>
+                  <p className="text-green-600 text-sm font-medium mb-2">Soil & Crop Management Expert</p>
                   <p className="text-gray-400 text-[.8rem] leading-relaxed">
-                    Helps farmers improve soil health, crop rotation, and
-                    chemical-free farming for higher yields.
+                    Helps farmers improve soil health, crop rotation, and chemical-free farming for higher yields.
                   </p>
                 </div>
                 <div className="mt-4">
@@ -122,27 +110,21 @@ const ExpertFarmer = () => {
             </div>
           </SwiperSlide>
 
-          {/* Farmer 4 */}
           <SwiperSlide>
-            <div className="card w-[300px] h-[360px] flex flex-col shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+            <div className="card w-full max-w-[300px] mx-auto h-[340px] flex flex-col shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
               <figure className="h-48 w-full overflow-hidden">
                 <img
                   src="https://i.ibb.co/wh6HwL67/farmer4.jpg"
-                  alt="Farmer Laila Begum"
+                  alt="Nazrul Islam"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </figure>
-              <div className="flex flex-col justify-between p-5 text-left">
+              <div className="flex flex-col justify-between p-5 text-left flex-1">
                 <div>
-                  <h3 className="font-semibold text-sm text-secondary mb-1">
-                  Nazrul Islam
-                  </h3>
-                  <p className="text-green-600 text-sm font-medium mb-2">
-                    Seed & Harvesting Specialist
-                  </p>
+                  <h3 className="font-semibold text-sm text-secondary mb-1">Nazrul Islam</h3>
+                  <p className="text-green-600 text-sm font-medium mb-2">Seed & Harvesting Specialist</p>
                   <p className="text-gray-400 text-[.8rem] leading-relaxed">
-                    Expert in high-quality seed selection, germination, and
-                    sustainable harvesting techniques.
+                    Expert in high-quality seed selection, germination, and sustainable harvesting techniques.
                   </p>
                 </div>
                 <div className="mt-4">
@@ -153,11 +135,14 @@ const ExpertFarmer = () => {
               </div>
             </div>
           </SwiperSlide>
+
         </Swiper>
+
+        {/* Perfectly centered pagination dots */}
+        <div className="custom-pagination mt-4 flex justify-center space-x-2"></div>
       </div>
     </section>
   );
 };
 
-export default 
-ExpertFarmer;
+export default ExpertFarmer;

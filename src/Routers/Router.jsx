@@ -14,11 +14,13 @@ import Forget from "../Pages/Forget/Forget";
 import PrivateRouth from "../Components/PrivateRouth";
 
 import Update from "../Components/Update";
+import Error from "../Pages/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/",

@@ -90,7 +90,7 @@ toast.error("No user found with that email")
            {/* password*/}
           <div className="relative">
             <label className="label">Password</label>
-          <input type={showPassword ? "text" : "password"}name="password" className="input w-full" placeholder="password" required
+          <input type={showPassword ? "text" : "password"}name="password" className="input w-full" placeholder="Password" required
           />
           <button type='button'  onClick={() => setShowPassword(!showPassword)}
     className=" btn-ghost btn-lg absolute right-3 top-9 transform -translate-y-1/2 text-gray-500 z-3">{

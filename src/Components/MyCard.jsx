@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ratings from "../../src/assets/ratings.png";
 import { Link, NavLink, useNavigate } from "react-router";
 import Loader from "./Loader";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { AuthContext } from "../Pages/Provider/AuthProvider";
 
 const MyCard = ({ singlecard }) => {
   const {
@@ -16,35 +17,46 @@ const MyCard = ({ singlecard }) => {
   } = singlecard;
 
   const [loading, setloading] = useState(false);
-
-  const handleDelete = () => {
+ const { user } = useContext(AuthContext);
+  const handleDelete=()=>{
+    console.log("clicked")
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axios
-          .delete(`https://assignmenttenserver-pi.vercel.app/products/${_id}`)
-          .then((res) => {
-            if (res.data.success) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success",
-              });
-            }
-          });
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+        console.log(result)
+  if (result.isConfirmed) {
+    console.log("confirm delete")
 
-        window.location.reload();
-      }
+     fetch(`https://assignmenttenserver-pi.vercel.app/products/${ _id}`, {
+    method:"DELETE",
+      headers: {
+        authorization: `Bearer ${user.accessToken}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+         setloading(false);
+           Swal.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
     });
-  };
+      });
 
+  }
+ 
+});
+window.location.reload();
+
+  }
+
+ 
   if (loading) {
     return <Loader></Loader>;
   }
@@ -81,13 +93,13 @@ const MyCard = ({ singlecard }) => {
               </div>
             </div>
 
-            <div className="navbar-end w-full py-2 flex gap-1">
+            <div className="navbar-end w-full py-2 flex justify-between">
               <NavLink
                 onClick={() =>
                   handleNav(navigate, `/ProductDetails/${_id}`, setloading)
                 }
                 to={`/ProductDetails/${_id}`}
-                className="btn bg-[#2bb958] rounded-sm "
+                className="btn bg-[#2bb958] rounded-sm w-fit "
               >
                 View Details
               </NavLink>
@@ -97,14 +109,14 @@ const MyCard = ({ singlecard }) => {
                   handleNav(navigate, `/update/${_id}`, setloading)
                 }
                 to={`/update/${_id}`}
-                className="btn bg-[#2bb958] rounded-sm "
+                className="btn bg-[#2bb958] rounded-sm w-fit  "
               >
                 Update
               </NavLink>
 
               <button
                 onClick={() => handleDelete()}
-                className="btn bg-[#2bb958] rounded-sm "
+                className="btn bg-[#2bb958] rounded-sm w-fit "
               >
                 Delete
               </button>

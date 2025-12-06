@@ -81,7 +81,7 @@ const AddProducts = () => {
               <select
                 name="category"
                 defaultValue="Vegetables"
-                className="select select-neutral border border-gray-300 w-full text-gray-800"
+                className="select select-neutral border border-gray-300 w-full"
               >
                 <option disabled={true}>category</option>
                 <option>Vegetables</option>

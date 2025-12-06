@@ -1,16 +1,49 @@
-# React + Vite
+                ******************Features****************
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**\*\*\***User Login & Register**\*\*\***
+Users can create an account and log in.
+After logging in, they get access to their own dashboard.
 
-Currently, two official plugins are available:
+**\*\*\***Add New Products**\*\*\***
+Users can add products with:
+Name
+Image
+Category
+Price
+Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**\*\*\***My Products Page**\*\*\***
+Users can see all the products they added.
+If only one product exists, it stays centered on the page.
 
-## React Compiler
+**\*\*\*\***Update & Delete**\*\*\***
+Users can edit their product information or remove products anytime.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**\*\*\***Product Filtering & Sorting**\*\*\***
+Visitors can sort products by:
+Price: Low → High
+Price: High → Low
+Category
 
-## Expanding the ESLint configuration
+****\***** Modern & Responsive Design****\*****
+The website is built with:
+React
+Tailwind CSS
+DaisyUI
+It works smoothly on mobile, tablet, and desktop.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+****\***** Secure Backend******\*******
+Uses Token (Bearer Token) authentication
+Only the logged-in user can access their own products
+Axios is used for data fetching
+
+****\*****Loading UI****\*****
+A Loader animation appears while data is being fetched.
+
+**\*\*\*\***Technologies Used**\*\*\***
+React.js
+React Router
+Tailwind CSS + DaisyUI
+Axios
+Node.js + Express (Backend)
+MongoDB (Database)

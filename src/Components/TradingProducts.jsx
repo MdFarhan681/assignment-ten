@@ -25,12 +25,12 @@ const TradingProducts = ({ trading }) => {
       {trading.map((product) => (
         <SwiperSlide key={product._id}>
           <div className="w-full p-1">
-            <div className="card shadow-sm p-2 rounded-md h-[250px] flex flex-col">
+            <div className="card shadow-sm p-2 rounded-md h-[200px] flex flex-col">
 
               {/* IMAGE */}
-              <figure className="w-full h-full overflow-hidden flex items-center justify-center">
+              <figure className="w-full h-fit overflow-hidden flex items-center justify-center">
                 <img
-                  className="w-full h-full object-contain"
+                  className="w-full h-fit object-contain"
                   src={product.coverImage}
                   alt="apps"
                 />

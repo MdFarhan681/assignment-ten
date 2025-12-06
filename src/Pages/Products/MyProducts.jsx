@@ -35,18 +35,25 @@ const MyProducts = () => {
       {loading && <Loader></Loader>}
 
       <div>
-        <main className="care py-15 flex flex-col w-fit mx-auto ">
-          <h2 className=" text-2xl md:text-3xl font-bold text-center pb-5">
+        <main className="care py-15 flex flex-col w-fit mx-auto px-[7%] place-items-center ">
+            
+          <h2 className=" text-2xl md:text-3xl font-bold text-center pb-5 ">
             My Products
           </h2>
 
-          <div className="w-full mycard px-0 grid grid-cols-1 md:grid-cols-4 gap-5  mx-auto place-items-center">
+          <div  className={`w-full mycard px-0 gap-5 mx-auto place-items-center text-center 
+    ${products.length === 1 ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}
+  `}>
             {products && products.length > 0 ? (
+
+
+
               products.map((singlecard) => (
-                <MyCard key={singlecard._id} singlecard={singlecard} />
+                <MyCard key={singlecard._id} singlecard={singlecard}  />
               ))
             ) : (
-              <div className="card w-96 bg-base-100 card-sm shadow-sm">
+                <div className="w-full ">
+              <div className="card w-96 bg-base-100 card-sm shadow-sm  mx-auto ">
                 <div className="card-body">
                   <h2 className="card-title text-center">
                     You don’t have any products yet. Add your first product now!
@@ -61,6 +68,7 @@ const MyProducts = () => {
                     </NavLink>
                   </div>
                 </div>
+              </div>
               </div>
             )}
           </div>

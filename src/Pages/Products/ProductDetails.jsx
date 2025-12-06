@@ -121,7 +121,7 @@ const ProductDetails = () => {
       <hr className="text-gray-300 w-full " />
 
       <div className="des w-full h-fit my-10">
-        <h1 className="font-bold text-xl text-[#001931] py-3">Description</h1>
+        <h1 className="font-bold text-xl  py-3">Description</h1>
         <p className="text-[#627382] text-justify py-2">
           {description}Organic food is cultivated without synthetic chemicals,
           pesticides, or genetically modified organisms, ensuring natural

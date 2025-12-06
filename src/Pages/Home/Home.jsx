@@ -34,7 +34,7 @@ const Home = () => {
 
 
 
-<h2 className=" text-2xl md:text-3xl font-bold text-center pb-5 mt-15">Our Popular Products
+<h2 className=" text-2xl md:text-3xl font-bold text-center pb-2 mt-15 mb-5 py-4">Our Popular Products
         </h2>
        <div className="expert">
         <TradingProducts trading={trading}></TradingProducts>
