@@ -25,19 +25,19 @@ Price: Low → High
 Price: High → Low
 Category
 
-****\***** Modern & Responsive Design****\*****
+\***\*\*\*\*** Modern & Responsive Design\***\*\*\*\***
 The website is built with:
 React
 Tailwind CSS
 DaisyUI
 It works smoothly on mobile, tablet, and desktop.
 
-****\***** Secure Backend******\*******
+\***\*\*\*\*** Secure Backend**\*\***\***\*\***
 Uses Token (Bearer Token) authentication
 Only the logged-in user can access their own products
 Axios is used for data fetching
 
-****\*****Loading UI****\*****
+\***\*\*\*\***Loading UI\***\*\*\*\***
 A Loader animation appears while data is being fetched.
 
 **\*\*\*\***Technologies Used**\*\*\***
@@ -47,3 +47,5 @@ Tailwind CSS + DaisyUI
 Axios
 Node.js + Express (Backend)
 MongoDB (Database)
+
+Live link:https://organic-foods-56053.web.app/
